@@ -200,7 +200,7 @@ prices = await asyncio.gather(*tasks)
 # Much faster than sequential calls!
 ```
 
-## 🛡️ **Safety Features**
+## **Safety Features**
 
 - **Testnet Support**: Test strategies safely without real money
 - **Rate Limiting**: Automatic rate limiting to prevent API bans

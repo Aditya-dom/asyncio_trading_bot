@@ -8,10 +8,10 @@ from typing import Dict, Any, List, Optional
 from urllib.parse import urlencode
 from datetime import datetime
 
-from binance_asyncio_bot.config.settings import BinanceConfig
-from binance_asyncio_bot.utils.logger import get_logger
-from binance_asyncio_bot.core.exceptions import *
-from binance_asyncio_bot.core.models import *
+from config.settings import BinanceConfig
+from utils.logger import get_logger
+from core.exceptions import *
+from core.models import *
 
 class AsyncBinanceClient:
     """
