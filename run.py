@@ -21,7 +21,7 @@ async def main():
     from strategies.simple_ma_strategy import SimpleMAStrategy
     from utils.logger import get_logger
     
-    print("🚀 Binance Async Trading Bot")
+    print("Binance Async Trading Bot")
     print("=" * 50)
     
     # Check command line arguments
@@ -37,8 +37,8 @@ async def main():
         elif example == "test":
             await test_connection()
         else:
-            print(f"❌ Unknown example: {example}")
-            print("📖 Available examples:")
+            print(f"Unknown example: {example}")
+            print(" Available examples:")
             print("   python run.py basic      - Basic API usage")
             print("   python run.py stream     - WebSocket streaming")
             print("   python run.py concurrent - Concurrent operations")
@@ -50,7 +50,7 @@ async def main():
 
 async def test_connection():
     """Test basic connection to Binance API"""
-    print("🔍 Testing Binance API Connection...")
+    print(" Testing Binance API Connection...")
     
     try:
         from config.settings import get_config
@@ -61,31 +61,31 @@ async def test_connection():
         async with AsyncBinanceClient(binance_config) as client:
             # Test ping
             if await client.ping():
-                print("✅ API Ping: Success")
+                print(" API Ping: Success")
             else:
-                print("❌ API Ping: Failed")
+                print("API Ping: Failed")
                 return
             
             # Test server time
             server_time = await client.get_server_time()
-            print(f"✅ Server Time: {server_time}")
+            print(f" Server Time: {server_time}")
             
             # Test price fetch
             price = await client.get_price("BTCUSDT")
-            print(f"✅ BTC Price: ${price:,.2f}")
+            print(f"BTC Price: ${price:,.2f}")
             
             print("🎉 Connection test successful!")
             
     except Exception as e:
-        print(f"❌ Connection test failed: {e}")
-        print("\n🔧 Troubleshooting:")
+        print(f"Connection test failed: {e}")
+        print("\nTroubleshooting:")
         print("1. Check your internet connection")
         print("2. Verify API keys in config/.env")
         print("3. Make sure you're using testnet (BINANCE_TESTNET=true)")
 
 async def example_basic_api_usage():
     """Example of basic async API usage"""
-    print("🔗 Basic Async API Usage Example")
+    print("Basic Async API Usage Example")
     print("-" * 30)
     
     try:
@@ -95,20 +95,20 @@ async def example_basic_api_usage():
         binance_config, _, _ = get_config()
         
         async with AsyncBinanceClient(binance_config) as client:
-            print("📡 Getting server time...")
+            print("Getting server time...")
             server_time = await client.get_server_time()
             print(f"   Server time: {server_time}")
             
-            print("💰 Getting BTC price...")
+            print("Getting BTC price...")
             price = await client.get_price("BTCUSDT")
             print(f"   BTC Price: ${price:,.2f}")
             
-            print("📊 Getting ticker information...")
+            print("Getting ticker information...")
             ticker = await client.get_ticker("BTCUSDT")
             print(f"   BTC 24h Change: {ticker.change_percent:+.2f}%")
             print(f"   Volume: {ticker.volume:,.0f}")
             
-            print("💳 Getting account balances...")
+            print("Getting account balances...")
             balances = await client.get_balances()
             print(f"   Found {len(balances)} assets with balance")
             
@@ -119,11 +119,11 @@ async def example_basic_api_usage():
         print("✅ Basic API example completed!")
         
     except Exception as e:
-        print(f"❌ Error in basic example: {e}")
+        print(f"Error in basic example: {e}")
 
 async def example_market_data_streaming():
     """Example of real-time market data streaming"""
-    print("📊 Market Data Streaming Example")
+    print("Market Data Streaming Example")
     print("-" * 30)
     
     try:
@@ -132,7 +132,7 @@ async def example_market_data_streaming():
         ws_manager = WebSocketManager()
         await ws_manager.start()
         
-        print("🔄 Starting real-time price stream for 10 seconds...")
+        print("Starting real-time price stream for 10 seconds...")
         
         # Price update counter
         update_count = 0
@@ -154,10 +154,10 @@ async def example_market_data_streaming():
         await asyncio.sleep(10)
         
         await ws_manager.stop()
-        print(f"✅ Streaming completed! Received {update_count} price updates")
+        print(f"Streaming completed! Received {update_count} price updates")
         
     except Exception as e:
-        print(f"❌ Error in streaming example: {e}")
+        print(f"Error in streaming example: {e}")
 
 async def example_concurrent_operations():
     """Example of concurrent async operations"""
@@ -185,49 +185,49 @@ async def example_concurrent_operations():
             
             concurrent_time = time.time() - start_time
             
-            print("💰 Results:")
+            print("Results:")
             for symbol, price in zip(symbols, prices):
                 print(f"   {symbol}: ${price:,.2f}")
             
             print(f"⚡ Concurrent fetch took: {concurrent_time:.2f} seconds")
-            print(f"📈 That's ~{len(symbols)/concurrent_time:.1f} requests per second!")
+            print(f"That's ~{len(symbols)/concurrent_time:.1f} requests per second!")
             
             # Compare with sequential approach (simulation)
             estimated_sequential = len(symbols) * 0.2  # Assume 200ms per request
-            print(f"🐌 Sequential would take ~{estimated_sequential:.1f} seconds")
-            print(f"🚀 Speedup: {estimated_sequential/concurrent_time:.1f}x faster!")
+            print(f" Sequential would take ~{estimated_sequential:.1f} seconds")
+            print(f"Speedup: {estimated_sequential/concurrent_time:.1f}x faster!")
         
-        print("✅ Concurrent operations example completed!")
+        print("Concurrent operations example completed!")
         
     except Exception as e:
-        print(f"❌ Error in concurrent example: {e}")
+        print(f"Error in concurrent example: {e}")
 
 async def run_full_bot():
     """Run the full trading bot"""
-    print("🤖 Starting Full Trading Bot")
+    print("Starting Full Trading Bot")
     print("-" * 30)
     
     try:
         # Import the full bot class
         from main import TradingBot
         
-        print("⚠️  WARNING: This will start a live trading bot!")
-        print("📝 Make sure BINANCE_TESTNET=true in your config/.env file")
+        print("WARNING: This will start a live trading bot!")
+        print("Make sure BINANCE_TESTNET=true in your config/.env file")
         
         # Ask for confirmation
         if len(sys.argv) <= 1:
             response = input("Continue? (y/N): ")
             if response.lower() != 'y':
-                print("👋 Bot startup cancelled")
+                print("Bot startup cancelled")
                 return
         
         bot = TradingBot()
         await bot.run()
         
     except KeyboardInterrupt:
-        print("\n👋 Bot stopped by user")
+        print("\nBot stopped by user")
     except Exception as e:
-        print(f"❌ Error running full bot: {e}")
+        print(f"Error running full bot: {e}")
 
 class TradingBot:
     """Simplified bot class for the launcher"""
@@ -291,7 +291,7 @@ class TradingBot:
             try:
                 await asyncio.gather(strategy_task, monitor_task)
             except KeyboardInterrupt:
-                print("\n🛑 Stopping bot...")
+                print("\n Stopping bot...")
                 self.running = False
                 
                 # Cancel tasks
@@ -327,13 +327,13 @@ class TradingBot:
             except asyncio.CancelledError:
                 break
             except Exception as e:
-                print(f"⚠️  Monitor error: {e}")
+                print(f"Monitor error: {e}")
 
 if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\n👋 Goodbye!")
+        print("\n Goodbye!")
     except Exception as e:
-        print(f"💥 Fatal error: {e}")
+        print(f" Fatal error: {e}")
         sys.exit(1)
