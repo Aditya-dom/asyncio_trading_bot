@@ -22,3 +22,27 @@
 2025-06-05 09:44:32 - main - INFO - [stop:261] - ✅ API connection closed
 2025-06-05 09:44:32 - main - INFO - [stop:266] - 📈 Total runtime: 0:00:57.327048
 2025-06-05 09:44:32 - main - INFO - [stop:268] - ✅ Trading Bot stopped successfully
+2025-06-05 10:25:12 - main - INFO - [start:41] - 🚀 Starting Async Trading Bot...
+2025-06-05 10:25:13 - main - INFO - [_test_connection:77] - 📡 Connected to Binance API (Server time: 1749099313797)
+2025-06-05 10:25:14 - main - INFO - [_test_connection:84] - 🧪 Using TESTNET - No real money will be used
+2025-06-05 10:25:14 - main - INFO - [_test_connection:86] - 👤 Account Type: SPOT
+2025-06-05 10:25:14 - main - INFO - [_test_connection:93] - 💰 Account Balances:
+2025-06-05 10:25:14 - main - INFO - [_test_connection:95] -    ETH: 1.000000 (locked: 0.000000)
+2025-06-05 10:25:14 - main - INFO - [_test_connection:95] -    BTC: 1.000000 (locked: 0.000000)
+2025-06-05 10:25:14 - main - INFO - [_test_connection:95] -    LTC: 5.000000 (locked: 0.000000)
+2025-06-05 10:25:14 - main - INFO - [_test_connection:95] -    BNB: 1.000000 (locked: 0.000000)
+2025-06-05 10:25:14 - main - INFO - [_test_connection:95] -    USDT: 10000.000000 (locked: 0.000000)
+2025-06-05 10:25:14 - main - INFO - [_test_connection:101] - 📊 BTCUSDT Price: $105193.14 (-0.09%)
+2025-06-05 10:25:15 - main - INFO - [_initialize_strategy:144] - 📈 Strategy initialized:
+2025-06-05 10:25:15 - main - INFO - [_initialize_strategy:145] -    Symbol: BTCUSDT
+2025-06-05 10:25:15 - main - INFO - [_initialize_strategy:146] -    Short MA (10): 105188.5590
+2025-06-05 10:25:15 - main - INFO - [_initialize_strategy:147] -    Long MA (20): 105176.7055
+2025-06-05 10:25:15 - main - INFO - [_initialize_strategy:148] -    Risk per trade: $50.0
+2025-06-05 10:25:15 - main - INFO - [start:58] - ✅ Trading Bot started successfully
+2025-06-05 10:25:15 - main - INFO - [_run_main_loop:159] - 🔄 Starting main bot loop...
+2025-06-05 10:25:57 - main - INFO - [signal_handler:280] - 📡 Received shutdown signal
+2025-06-05 10:25:57 - main - INFO - [stop:249] - 🛑 Stopping Trading Bot...
+2025-06-05 10:25:58 - main - INFO - [stop:256] - ✅ Strategy stopped
+2025-06-05 10:25:58 - main - INFO - [stop:261] - ✅ API connection closed
+2025-06-05 10:25:58 - main - INFO - [stop:266] - 📈 Total runtime: 0:00:45.566450
+2025-06-05 10:25:58 - main - INFO - [stop:268] - ✅ Trading Bot stopped successfully

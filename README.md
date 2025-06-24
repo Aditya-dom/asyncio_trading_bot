@@ -70,8 +70,8 @@ pip install -r requirements.txt
 Your API keys are already configured in `config/.env`:
 
 ```env
-BINANCE_API_KEY=EKAwb7t9AvEOvDktLKJEKKrl730v2x4mLmosZcdBt8kHTAyZfBa4kK5yc48SO7XF
-BINANCE_API_SECRET=UJglFrlvEX76hFpsFpP1qZ5yqYo02nKuCWrotdHMC61TmlEyDsSYzAdXnEuIAVlD
+BINANCE_API_KEY=
+BINANCE_API_SECRET=
 BINANCE_TESTNET=true  # Start with testnet for safety!
 ```
 
